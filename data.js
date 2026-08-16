@@ -13,23 +13,23 @@ const CONFIG = {
   discordUrl: "https://discord.gg/BRabpUbSfZ",
 
   connect: {
-    ip: "127.0.0.1",
-    port: "2302",
+    ip: "191.101.30.133",
+    port: "2491",
     map: "Chernarus",
     // Optional: BattleMetrics server ID for live status/player count.
     // Find it in your BattleMetrics server URL: battlemetrics.com/servers/dayz/XXXXXXX
     // Leave blank to disable the live-status fetch and show a static badge instead.
-    battlemetricsId: ""
+    battlemetricsId: "40601145"
   },
 
   wipe: {
     schedule: "Full wipe every 2 weeks — next: check Discord pinned post",
-    lastWipe: "2026-08-03"
+    lastWipe: "2026-08-012"
   },
 
   rulesSummary: [
     "No cheating, exploiting, or duping — permanent ban, no appeal",
-    "No base building within 1.5km of a named town",
+    "No advertising",
     "KOS is allowed. Combat logging is not.",
     "Voice/text chat: no slurs, no harassment",
     "Full rules pinned in #server-rules on {DISCORD}"
@@ -38,16 +38,16 @@ const CONFIG = {
   // Add a workshopUrl to any entry once you have the Steam Workshop link —
   // mods without one render as plain cards instead of clickable links.
   mods: [
-    { name: "CannabisPlus", workshopUrl: "" },
-    { name: "SIBNIC Helis", workshopUrl: "" },
-    { name: "SNAFU", workshopUrl: "" },
-    { name: "Expansion Market", workshopUrl: "" },
-    { name: "BC Weapons", workshopUrl: "" },
-    { name: "Saline Bag+", workshopUrl: "" },
-    { name: "DayZ Gone Server Pack", workshopUrl: "" },
-    { name: "Callatic Vehicles", workshopUrl: "" },
-    { name: "Rocket Movement+", workshopUrl: "" },
-    { name: "Base Building Plus", workshopUrl: "" }
+    { name: "CannabisPlus", workshopUrl: "https://steamcommunity.com/workshop/filedetails/?id=1932611410" },
+    { name: "SIBNIC Helis", workshopUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=2705416522" },
+    { name: "SNAFU", workshopUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=2443122116" },
+    { name: "Expansion Market", workshopUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=2572328470" },
+    { name: "BC Weapons", workshopUrl: "https://steamcommunity.com/workshop/filedetails/?id=3092251597" },
+    { name: "Saline Bag+", workshopUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=1736675168" },
+    { name: "DayZ Gone Server Pack", workshopUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3428206652" },
+    { name: "Callatic Vehicles", workshopUrl: "https://steamcommunity.com/id/Callatic" },
+    { name: "Rocket Movement+", workshopUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3723753750" },
+    { name: "Base Building Plus", workshopUrl: "https://steamcommunity.com/workshop/filedetails/?id=1710977250" }
   ],
 
   // Field Log — news / changelog. Newest first.
@@ -60,12 +60,12 @@ const CONFIG = {
     {
       date: "2026-08-03",
       tag: "WIPE",
-      body: "Map wiped. New trader stock at Green Mountain. Base rules unchanged — 1.5km minimum from named towns still enforced."
+      body: "Map wiped. New trader stock at Severo. Base rules unchanged."
     },
     {
       date: "2026-07-28",
       tag: "NOTICE",
-      body: "Two admins added to the roster. Ban appeals now go through the #appeals channel, not DMs."
+      body: "Two admins added to the roster."
     }
   ],
 
@@ -82,6 +82,6 @@ const CONFIG = {
 
   community: [
     { label: "Discord", url: "https://discord.gg/BRabpUbSfZ" },
-    { label: "BattleMetrics", url: "https://www.battlemetrics.com/" }
+    { label: "BattleMetrics", url: "https://www.battlemetrics.com/40601145" }
   ]
 };
