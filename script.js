@@ -26,10 +26,15 @@
     document.getElementById("last-wipe").textContent =
       `LAST WIPE: ${CONFIG.wipe.lastWipe}`;
 
+    const discordLink = `<a href="${CONFIG.discordUrl}" target="_blank" rel="noopener noreferrer">Discord</a>`;
     const list = document.getElementById("rules-list");
     CONFIG.rulesSummary.forEach((rule) => {
       const li = document.createElement("li");
-      li.textContent = rule;
+      if (rule.includes("{DISCORD}")) {
+        li.innerHTML = escapeHTML(rule).replace("{DISCORD}", discordLink);
+      } else {
+        li.textContent = rule;
+      }
       list.appendChild(li);
     });
   }
@@ -37,16 +42,19 @@
   function renderMods() {
     const grid = document.getElementById("mod-grid");
     CONFIG.mods.forEach((mod) => {
-      const a = document.createElement("a");
-      a.className = "mod-card";
-      a.href = mod.workshopUrl;
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
-      a.innerHTML = `
+      const hasLink = !!mod.workshopUrl;
+      const el = document.createElement(hasLink ? "a" : "div");
+      el.className = "mod-card";
+      if (hasLink) {
+        el.href = mod.workshopUrl;
+        el.target = "_blank";
+        el.rel = "noopener noreferrer";
+      }
+      el.innerHTML = `
         <span class="mod-name">${escapeHTML(mod.name)}</span>
-        <span class="mod-note mono">${escapeHTML(mod.note || "")}</span>
+        ${mod.note ? `<span class="mod-note mono">${escapeHTML(mod.note)}</span>` : ""}
       `;
-      grid.appendChild(a);
+      grid.appendChild(el);
     });
   }
 
@@ -173,7 +181,7 @@
 
     if (!id) {
       dot.classList.remove("online", "offline");
-      text.textContent = "STATUS: SEE DISCORD";
+      text.innerHTML = `STATUS: SEE <a href="${CONFIG.discordUrl}" target="_blank" rel="noopener noreferrer">DISCORD</a>`;
       count.textContent = "";
       return;
     }
@@ -192,7 +200,7 @@
       }
     } catch (e) {
       dot.classList.remove("online", "offline");
-      text.textContent = "STATUS: SEE DISCORD";
+      text.innerHTML = `STATUS: SEE <a href="${CONFIG.discordUrl}" target="_blank" rel="noopener noreferrer">DISCORD</a>`;
     }
   }
 
