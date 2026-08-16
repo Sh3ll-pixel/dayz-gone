@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAYZ GONE — DayZ Server</title>
+<meta name="description" content="Server info, mods, rules, and the survivor board for the DayZ Gone DayZ server.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;800&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+<div class="scanline" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="hero-frame">
+    <p class="eyebrow mono">FREQ 148.20 — OPEN CHANNEL</p>
+    <h1 class="server-name" id="server-name">SERVER</h1>
+    <p class="tagline" id="tagline">—</p>
+
+    <div class="status-row">
+      <span class="status-badge" id="status-badge">
+        <span class="status-dot" id="status-dot"></span>
+        <span id="status-text">CHECKING SIGNAL…</span>
+      </span>
+      <span class="player-count mono" id="player-count"></span>
+    </div>
+
+    <div class="connect-card">
+      <div class="connect-field">
+        <span class="connect-label mono">IP:PORT</span>
+        <span class="connect-value mono" id="connect-ip">—</span>
+        <button class="copy-btn mono" id="copy-btn" type="button" aria-label="Copy server address">COPY</button>
+      </div>
+      <div class="connect-field">
+        <span class="connect-label mono">MAP</span>
+        <span class="connect-value mono" id="connect-map">—</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav mono" aria-label="Section navigation">
+  <a href="#dossier">DOSSIER</a>
+  <a href="#loadout">LOADOUT</a>
+  <a href="#log">FIELD LOG</a>
+  <a href="#board">SURVIVOR BOARD</a>
+  <a href="#rendezvous">RENDEZVOUS</a>
+</nav>
+
+<main>
+
+  <section id="dossier" class="section">
+    <h2 class="section-title"><span class="tag-num mono">01</span>SERVER DOSSIER</h2>
+    <div class="dossier-grid">
+      <div class="sheet">
+        <h3 class="sheet-title mono">WIPE SCHEDULE</h3>
+        <p id="wipe-schedule"></p>
+        <p class="dim mono" id="last-wipe"></p>
+      </div>
+      <div class="sheet">
+        <h3 class="sheet-title mono">RULES OF ENGAGEMENT</h3>
+        <ul class="rules-list" id="rules-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="loadout" class="section">
+    <h2 class="section-title"><span class="tag-num mono">02</span>LOADOUT — MOD LIST</h2>
+    <div class="mod-grid" id="mod-grid"></div>
+  </section>
+
+  <section id="log" class="section">
+    <h2 class="section-title"><span class="tag-num mono">03</span>FIELD LOG</h2>
+    <div class="log-feed" id="log-feed"></div>
+  </section>
+
+  <section id="board" class="section">
+    <h2 class="section-title"><span class="tag-num mono">04</span>SURVIVOR BOARD</h2>
+    <p class="dim board-note">Snapshot, updated by hand — not a live feed.</p>
+    <div class="table-wrap">
+      <table class="board-table">
+        <thead>
+          <tr>
+            <th data-sort="name">SURVIVOR</th>
+            <th data-sort="kills">KILLS</th>
+            <th data-sort="deaths">DEATHS</th>
+            <th data-sort="hours">HOURS</th>
+            <th data-sort="kd">K/D</th>
+          </tr>
+        </thead>
+        <tbody id="board-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="rendezvous" class="section">
+    <h2 class="section-title"><span class="tag-num mono">05</span>RENDEZVOUS POINT</h2>
+    <div class="community-row" id="community-row"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p class="mono dim">DAYZ GONE — TRANSMISSION ENDS</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
